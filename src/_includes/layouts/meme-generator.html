@@ -1,0 +1,41 @@
+{% extends "layouts/base.html" %}
+
+{% block head %}
+<link href="/css/meme-generator.css" rel="stylesheet">
+<script src="/js/meme-generator/index.js" type="module"></script>
+{% endblock %}
+
+{% block content %}
+<div class="meme-generator">
+    <div class="meme-generator__canvas-wrapper">
+        <p class="meme-generator__canvas-label">Preview:</p>
+        <canvas class="meme-generator__canvas"></canvas>
+    </div>
+
+    <div class="meme-generator__settings">
+        <div class="meme-generator__file-input">
+            <label for="meme-generator-input__file">File:</label>
+            <input id="meme-generator-input__file" type="file" accept="image/*">
+        </div>
+
+        <div class="meme-generator__font-config">
+            <label for="meme-generator-input__font-size">Font size:</label>
+            <input id="meme-generator-input__font-size" type="number" min="1" value="32">
+        </div>
+
+        <div class="meme-generator__text-input" data-text-location="top">
+            <label for="meme-generator-input__top-text">Top text:</label>
+            <textarea id="meme-generator-input__top-text" cols="30" rows="10"></textarea>
+        </div>
+
+        <div class="meme-generator__text-input" data-text-location="bottom">
+            <label for="meme-generator-input__bottom-text">Bottom text:</label>
+            <textarea id="meme-generator-input__bottom-text" cols="30" rows="10"></textarea>
+        </div>
+
+        <button class="meme-generator__generate">Generate Meme</button>
+    </div>
+
+    <div class="meme-generator__preview-wrapper"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.25em;
+    line-height: 1.5;
+}
+
+/* FORMS */
+button {
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+}
