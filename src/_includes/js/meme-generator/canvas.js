@@ -60,10 +60,8 @@ export const canvasToPng = () => {
 
     canvas.toBlob((blob) => {
         const img = document.createElement("img");
-        const url = URL.createObjectURL(blob);
-        console.log(url);
-        // img.onload = () => URL.revokeObjectURL(url);
-        img.src = url;
+        // TODO: should probably URL.revokeObjectURL() this at some point
+        img.src = URL.createObjectURL(blob);
         img.classList.add("meme-generator__preview");
 
         const previewWrapper = document.querySelector(".meme-generator__preview-wrapper");
